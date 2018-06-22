@@ -1,6 +1,5 @@
 from webapp import app
 
-
 import ssl
 
 try:

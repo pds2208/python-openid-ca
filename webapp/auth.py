@@ -52,8 +52,8 @@ class CASignIn(OAuthSignIn):
             access_token_url=ca_params.get('token_endpoint')
         )
 
-    def authorize(self, nextpage):
-        self.next_page = nextpage
+    def authorize(self, next_page):
+        self.next_page = next_page
         return redirect(self.service.get_authorize_url(
             scope='openid email profile',
             response_type='code',
@@ -79,5 +79,5 @@ class CASignIn(OAuthSignIn):
         )
 
         me = oauth_session.get('').json()
-        return self.next_page, me['name'], me['email'], me['family_name'], me['nickname'], me['preferred_username'], None, None
-
+        return self.next_page, me['name'], me['email'], me['family_name'], \
+               me['nickname'], me['preferred_username'], None, None

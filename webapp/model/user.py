@@ -1,6 +1,10 @@
 class User:
     def __init__(self, email):
         self.email = email
+        self.username = None
+        self.family_name = None
+        self.nickname = None
+        self.preferred_username = None
 
     def is_active(self):
         return True

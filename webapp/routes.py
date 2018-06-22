@@ -1,4 +1,4 @@
-from flask import flash, redirect, render_template, request, send_from_directory, url_for
+from flask import redirect, render_template, request, send_from_directory, url_for
 from webapp import app
 
 from webapp.model.user import User
@@ -9,10 +9,12 @@ from webapp.auth import OAuthSignIn
 
 app.config.from_object('config')
 app.secret_key = 'this is very secret'
+app.user = None
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'index'
+
 
 
 @login_manager.user_loader
@@ -28,15 +30,14 @@ def unauthorized():
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):
 
-    nextPage = request.args.get('nextPage')
-
-    # Flask-Login function
+    next_page = request.args.get('nextPage')
 
     if not current_user.is_anonymous:
-        return redirect(url_for(nextPage))
+        return redirect(url_for(next_page))
 
     oauth = OAuthSignIn.get_provider(provider)
-    return oauth.authorize(nextPage)
+    return oauth.authorize(next_page)
+
 
 
 @app.route('/callback/<provider>')
@@ -51,14 +52,22 @@ def oauth_callback(provider):
         # I need a valid email address for my user identification
         return redirect(url_for('index', error=error + ": " + error_description))
 
-    # Look if the user already exists
-    user = User.find_or_create_by_email(email)
+    app.user = User.find_or_create_by_email(email)
+    app.user.username = username
+    app.user.family_name = family_name
+    app.user.nickname = nickname
+    app.user.preferred_username = preferred_username
 
     # Log in the user, by default remembering them for their next visit
     # unless they log out.
-    login_user(user, remember=True)
+    login_user(app.user, remember=True)
 
     return redirect(next_page)
+
+
+@app.context_processor
+def inject_user():
+    return dict(ca_user=app.user)
 
 
 @app.route("/login")

@@ -4,7 +4,11 @@
 
 <div style="padding: 100px;">
     <h3 class="govuk-heading-m govuk-!-padding-bottom-2">
-        Welcome {{ user.username }}, your shopping list awaits you
+        {% if ca_user.nickname %}
+            Welcome {{ ca_user.nickname }}, your shopping list awaits you
+        {% else %}
+            Welcome {{ ca_user.username }}, your shopping list awaits you
+        {% endif %}
     </h3>
 
     <div class="govuk-width-container">
