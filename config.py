@@ -1,7 +1,8 @@
-client_id = '50a05a0b-275f-4de4-9ab6-0f0fe1c2c478'
-client_secret = '6e2a24a9-b9e4-4610-9e41-c116e01ed805'
+client_id = '77d9c32d-3a02-4cb4-8c69-33946505d553'
+client_secret = 'f9feada3-973f-43c1-9737-70636d576130'
 discovery_endpoint = 'https://localhost:8443/.well-known/openid-configuration'
-
+# set the environment CURL_CA_BUNDLE=
+# to ignore certificate errors
 OAUTH_CREDENTIALS = {
     'CA': {
         'id': client_id,
