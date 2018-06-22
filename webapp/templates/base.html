@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenID Connect Demo</title>
+
+    <!--[if !IE 8]><!-->
+    <link rel="stylesheet" href="css/govuk-frontend-1.0.0.min.css">
+    <!--<![endif]-->
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="css/govuk-frontend-ie8-1.0.0.min.css">
+    <![endif]-->
+</head>
+
+{% block body %}
+<body>
+
+    {% include 'includes/header.html' %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'includes/footer.html' %}
+
+</body>
+{% endblock %}
+
+<script src="/javascript/govuk-frontend-1.0.0.min.js"></script>
+<script>window.GOVUKFrontend.initAll()</script>
+
+</html>
