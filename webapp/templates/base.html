@@ -1,29 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <title>OpenID Connect Demo</title>
+    <meta charset="utf-8"/>
+    <title>GOV.UK - Le meilleur endroit pour trouver des services gouvernementaux et de l'information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="blue"/>
 
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"/>
+    <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="blue">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/govuk-apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/govuk-apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/govuk-apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
     <!--[if !IE 8]><!-->
-    <link rel="stylesheet" href="css/govuk-frontend-1.0.0.min.css">
+    <link rel="stylesheet" href="/css/govuk-frontend-1.0.0.min.css">
     <!--<![endif]-->
     <!--[if IE 8]>
-      <link rel="stylesheet" href="css/govuk-frontend-ie8-1.0.0.min.css">
+    <link rel="stylesheet" href="/css/govuk-frontend-ie8-1.0.0.min.css">
     <![endif]-->
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 </head>
 
-{% block body %}
-<body>
+<body class="govuk-template__body app-body-class">
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+</script>
+{% include 'includes/header.html' %}
 
-    {% include 'includes/header.html' %}
+{% block content %}{% endblock %}
 
-    {% block content %}{% endblock %}
+{% include 'includes/footer.html' %}
 
-    {% include 'includes/footer.html' %}
-
+    <script src="/javascript/govuk-frontend-1.0.0.min.js"></script>
+    <script>window.GOVUKFrontend.initAll()</script>
 </body>
-{% endblock %}
 
-<script src="/javascript/govuk-frontend-1.0.0.min.js"></script>
-<script>window.GOVUKFrontend.initAll()</script>
 
 </html>
