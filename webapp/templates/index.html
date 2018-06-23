@@ -28,7 +28,7 @@
                             You are already logged in {{ca_user.nickname}}
                         </h3>
                     </legend>
-                    <a href={{ url_for('shopping') }}>
+                    <a href="{{url_for('shopping')}}">
                         <button type="submit" autofocus class="govuk-button">
                             Continue to Shopping List
                         </button>
@@ -41,7 +41,7 @@
                     Welcome. Click on the Button Below to View your Shopping List
                 </h3>
 
-                <a href="{{ url_for('oauth_authorize', provider='CA', nextPage='shopping') }}">
+                <a href="{{url_for('oauth_authorise', provider='CA', nextPage='shopping')}}">
                     <button type="submit" autofocus class="govuk-button">
                         Shopping List
                     </button>

@@ -16,28 +16,25 @@ login_manager.init_app(app)
 login_manager.login_view = 'index'
 
 
-
 @login_manager.user_loader
-def load_user(userid):
-    return User.find_by_id(userid)
+def load_user(user_id):
+    return User.find_by_id(user_id)
 
 
 @login_manager.unauthorized_handler
-def unauthorized():
-    return redirect(url_for('oauth_authorize', provider='CA', nextPage="shopping"))
+def unauthorised():
+    return redirect(url_for('oauth_authorise', provider='CA', nextPage="shopping"))
 
 
-@app.route('/authorize/<provider>')
-def oauth_authorize(provider):
-
+@app.route('/authorise/<provider>')
+def oauth_authorise(provider):
     next_page = request.args.get('nextPage')
 
     if not current_user.is_anonymous:
         return redirect(url_for(next_page))
 
     oauth = OAuthSignIn.get_provider(provider)
-    return oauth.authorize(next_page)
-
+    return oauth.authorise(next_page)
 
 
 @app.route('/callback/<provider>')
@@ -72,7 +69,7 @@ def inject_user():
 
 @app.route("/login")
 def login():
-    return redirect(url_for('oauth_authorize', provider='CA'))
+    return redirect(url_for('oauth_authorise', provider='CA'))
 
 
 @app.route("/logout")

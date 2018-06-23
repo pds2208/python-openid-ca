@@ -15,7 +15,7 @@ class OAuthSignIn(object):
         self.consumer_secret = credentials['secret']
         self.discovery_endpoint = credentials['discovery_endpoint']
 
-    def authorize(self, nextpage):
+    def authorise(self, nextpage):
         pass
 
     def callback(self):
@@ -52,7 +52,7 @@ class CASignIn(OAuthSignIn):
             access_token_url=ca_params.get('token_endpoint')
         )
 
-    def authorize(self, next_page):
+    def authorise(self, next_page):
         self.next_page = next_page
         return redirect(self.service.get_authorize_url(
             scope='openid email profile',
