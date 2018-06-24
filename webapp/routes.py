@@ -46,7 +46,7 @@ def oauth_callback(provider):
     next_page, username, email, family_name, nickname, preferred_username, error, error_description = oauth.callback()
 
     if email is None or error is not None:
-        # I need a valid email address for my user identification
+        # Need a valid email address for user identification
         return redirect(url_for('index', error=error + ": " + error_description))
 
     app.user = User.find_or_create_by_email(email)
