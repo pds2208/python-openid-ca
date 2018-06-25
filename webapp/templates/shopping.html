@@ -27,18 +27,18 @@
                         </thead>
                         <tbody class="govuk-table__body">
 
-                        {% for item in products %}
+                            {% for item in products %}
 
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    {{item.item}}
-                                </td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric">
-                                    &pound; {{item.price}}
-                                </td>
-                            </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">
+                                        {{item.item}}
+                                    </td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                                        &pound; {{item.price}}
+                                    </td>
+                                </tr>
 
-                        {% endfor %}
+                            {% endfor %}
 
                         </tbody>
                     </table>

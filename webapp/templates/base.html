@@ -24,17 +24,17 @@
         <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
     </head>
 
-    <body class="govuk-template__body app-body-class">
+    <body class="govuk-template__body app-body-class" style="padding: 30px;">
 
-    <script>
-        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-    </script>
+        <script>
+            document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+        </script>
 
-    {% include 'includes/header.html' %}
+        {% include 'includes/header.html' %}
 
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-    {% include 'includes/footer.html' %}
+        {% include 'includes/footer.html' %}
 
         <script src="/javascript/govuk-frontend-1.0.0.min.js"></script>
         <script>window.GOVUKFrontend.initAll()</script>

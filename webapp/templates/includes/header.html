@@ -3,7 +3,7 @@
 <header class="govuk-header " role="banner" data-module="header">
     <div class="govuk-header__container govuk-width-container">
         <div class="govuk-header__logo">
-            <a href="#" class="govuk-header__link govuk-header__link--homepage">
+            <a href="/" class="govuk-header__link govuk-header__link--homepage">
                 <span class="govuk-header__logotype">
 
                     <svg role="presentation" focusable="false" class="govuk-header__logotype-crown"
@@ -21,10 +21,15 @@
                 </span>
             </a>
         </div>
-        <span>
+        <div class="govuk-header__content" style="width: 66%;">
+            <!--
+                Set the width to overcome a weird issue where if it is left at 66.66%
+                it doesn't display correctly
+            -->
             <a href="/" class="govuk-header__link govuk-header__link--service-name">
-                OpenID Connect Demo</a>
-        </span>
+                OpenID Connect Demo
+            </a>
+        </div>
     </div>
 </header>
 
