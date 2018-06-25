@@ -14,6 +14,7 @@ class OAuthSignIn(object):
         self.consumer_id = credentials['id']
         self.consumer_secret = credentials['secret']
         self.discovery_endpoint = credentials['discovery_endpoint']
+        self.scope = credentials['scope']
 
     def authorise(self, nextpage):
         pass
@@ -55,7 +56,7 @@ class CASignIn(OAuthSignIn):
     def authorise(self, next_page):
         self.next_page = next_page
         return redirect(self.service.get_authorize_url(
-            scope='openid email profile',
+            scope=self.scope,
             response_type='code',
             redirect_uri=self.get_callback_url())
         )
