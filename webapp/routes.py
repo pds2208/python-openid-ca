@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, send_from_directory, url_for
 from webapp import app
 
-from webapp.model.user import User
+from webapp.models.user import User
 
 from flask_login import login_user, logout_user, current_user, login_required, LoginManager
 
