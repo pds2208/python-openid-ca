@@ -2,55 +2,55 @@
 
 {% block content %}
 
-    <div class="govuk-width-container">
+<div class="govuk-width-container">
 
-        <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
+    <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
 
-            {% if error %}
+        {% if error %}
 
-                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
-                     data-module="error-summary">
-                    <h2 class="govuk-error-summary__title" id="error-summary-title">
-                        Login Problem
-                    </h2>
-                    <div class="govuk-error-summary__body" >
-                        <p>{{ error }}</p>
-                        <p>Please try again</p>
-                    </div>
-                </div>
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+             data-module="error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                Login Problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <p>{{ error }}</p>
+                <p>Please try again</p>
+            </div>
+        </div>
 
-            {% endif %}
+        {% endif %}
 
-            {% if current_user.is_authenticated %}
+        {% if current_user.is_authenticated %}
 
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h3 class="govuk-fieldset__heading">
-                            You are already logged in {{ca_user.nickname}}
-                        </h3>
-                    </legend>
-                    <a href="{{url_for('shopping')}}">
-                        <button type="submit" class="govuk-button govuk-button--start">
-                            Continue to Shopping List
-                        </button>
-                    </a>
-                </fieldset>
-
-            {% else %}
-
-                <h3 class="govuk-heading-m govuk-!-padding-bottom-2">
-                    Welcome. Click on the Button Below to View your Shopping List
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading-m govuk-!-padding-bottom-9">
+                    You are already logged in {{ca_user.nickname}}
                 </h3>
+            </legend>
+            <a href="{{url_for('shopping')}}">
+                <button type="submit" class="govuk-button govuk-button--start">
+                    Continue to Shopping List
+                </button>
+            </a>
+        </fieldset>
 
-                <a href="{{url_for('oauth_authorise', provider='CA', nextPage='shopping')}}">
-                    <button type="submit"  class="govuk-button govuk-button--start">
-                        Shopping List
-                    </button>
-                </a>
+        {% else %}
 
-            {% endif %}
+        <h3 class="govuk-heading-m govuk-!-padding-bottom-9">
+            Welcome. Click on the Button Below to View your Shopping List
+        </h3>
 
-        </main>
-    </div>
+        <a href="{{url_for('oauth_authorise', provider='CA', nextPage='shopping')}}">
+            <button type="submit" class="govuk-button govuk-button--start">
+                Shopping List
+            </button>
+        </a>
+
+        {% endif %}
+
+    </main>
+</div>
 
 {% endblock %}

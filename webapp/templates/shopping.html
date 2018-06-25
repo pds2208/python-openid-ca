@@ -2,52 +2,51 @@
 
 {% block content %}
 
-<div style="padding: 100px;">
-    <h3 class="govuk-heading-m govuk-!-padding-bottom-2">
-        {% if ca_user.nickname %}
+<div class="govuk-width-container">
+
+    <a href="/" class="govuk-back-link">Back</a>
+
+    <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
+        <h3 class="govuk-heading-m govuk-!-padding-bottom-2">
+            {% if ca_user.nickname %}
             Welcome {{ ca_user.nickname }}, your shopping list awaits you
-        {% else %}
+            {% else %}
             Welcome {{ ca_user.username }}, your shopping list awaits you
-        {% endif %}
-    </h3>
+            {% endif %}
+        </h3>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
 
-    <div class="govuk-width-container">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">Item Description</th>
+                        <th class="govuk-table__header govuk-table__header--numeric"
+                            scope="col">Budgeted Cost
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
 
-        <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                    {% for item in products %}
 
-                    <table class="govuk-table">
-                        <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-table__header" scope="col">Item Description</th>
-                            <th class="govuk-table__header govuk-table__header--numeric"
-                                scope="col">Budgeted Cost</th>
-                        </tr>
-                        </thead>
-                        <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            {{item.item}}
+                        </td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">
+                            &pound; {{item.price}}
+                        </td>
+                    </tr>
 
-                            {% for item in products %}
+                    {% endfor %}
 
-                                <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell">
-                                        {{item.item}}
-                                    </td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                                        &pound; {{item.price}}
-                                    </td>
-                                </tr>
-
-                            {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </main>
+        </div>
 
-    </div>
-
+    </main>
     <div>
         <a href="{{ url_for('logout') }}">
             <button type="submit" class="govuk-button">
@@ -55,6 +54,8 @@
             </button>
         </a>
     </div>
+
 </div>
+
 
 {% endblock %}
