@@ -111,7 +111,7 @@ def shopping():
             'price': 89500
         },
         {
-            'item': 'JIiyama 4k Monitor',
+            'item': 'Iiyama 4k Monitor',
             'price': 450
         },
         {
