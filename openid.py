@@ -12,5 +12,5 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 
 if __name__ == "__main__":
-    app.run(ssl_context=('cert.pem', 'key.pem'))
+    app.run()
 
