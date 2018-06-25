@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 
 <div class="govuk-width-container">
@@ -29,11 +30,13 @@
                         You are already logged in {{ca_user.nickname}}
                     </h3>
                 </legend>
-                <a href="{{url_for('shopping')}}">
-                    <button type="submit" class="govuk-button govuk-button--start">
-                        Continue to Shopping List
-                    </button>
-                </a>
+                {{
+                    govukButton(
+                        caption="Continue to Shopping List",
+                        type="start",
+                        href="shopping"
+                    )
+                }}
             </fieldset>
 
         {% else %}
