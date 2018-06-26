@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.main_navigation {
+  border-bottom: solid 1px #CFCFCF;
+}
+
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #222222;
+  text-align: center;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 4px solid #033E58;
+}
+
+.topnav a.active {
+  border-bottom: 4px solid #033E58;
+}
+
+.topnav a:focus {
+  border-bottom: 4px solid #033E58;
+  color: #FFFFFF;
+  padding: 0.7rem 1.5rem;
+  outline: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+}

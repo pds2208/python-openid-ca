@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.correction {
+  background-color: #033E58;
+  padding: 0.5rem 0 0 0;
+  color: #ffffff;
+  height: 2.5rem
+}
+
+.correction a {
+  color: #E4E8EB;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.correction a:hover {
+  color: #FFFFFF;
+}

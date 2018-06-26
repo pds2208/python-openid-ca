@@ -1,0 +1,27 @@
+/* AI search results page */
+
+.ai-results-table {
+  margin: 0.5rem 0 0.15rem 0;
+}
+
+.location-icon:after{
+   background-image: url('../../../img/location-icon.svg');
+   background-size: 1.75rem;
+   padding: 0.25rem 2rem 0.2rem 0;
+   content: "";
+}
+
+.location-icon:after:focus{
+   background-image: url('../../../img/location-icon-white.svg');
+   background-size: 1.75rem;
+   padding: 0.25rem 2rem 0.2rem 0;
+   content: "";
+}
+
+.location-link-landing-page {
+  margin-left: 1rem;
+}
+
+.sml-bottom-margin {
+  margin-bottom: 0.25rem;
+}

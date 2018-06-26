@@ -1,0 +1,60 @@
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1.25rem;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+
+.tabset > label:hover {
+  color: #000000;
+  background-color: #E4E8EB;
+}
+
+
+.tabset > input:focus + label {
+  color: #000000;
+  text-decoration: none;
+}
+
+.tabset > input:checked + label {
+  border-color: #222222;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+  font-weight: bold;
+}
+
+.tabset > input:checked + label:hover {
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #222222;
+}

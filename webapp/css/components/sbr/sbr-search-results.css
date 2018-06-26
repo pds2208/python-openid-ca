@@ -1,0 +1,66 @@
+.highlight {
+  background-color: #F0F762;
+}
+
+.search-item-container {
+  padding-bottom: 2rem;
+}
+
+.download-float {
+  display: inline-block;
+  margin-right: 9px;
+  margin-right: 0.5rem;
+}
+
+.key-line-download {
+  border-bottom: 1px solid #CFCFCF;
+  margin: 2.5rem 0;
+}
+
+/* SBR search filter */
+
+.filter-container {
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid #CFCFCF;
+}
+
+.filter-results {
+  display: inline-block;
+  float: left;
+  margin-right: 1.5rem;
+}
+
+.float--left {
+  float: left;
+}
+
+.filter-label {
+  width: auto;
+  margin-right: 1.7rem;
+  margin-left: 0.1rem;
+}
+
+/* Search term highlight colour */
+
+.highlight {
+  background-color: #F0F762;
+}
+
+/* Search term link remove underline */
+
+.search-results-link:focus .highlight {
+  background: #033E58 !important;
+}
+
+.sbr-results th {
+  width: 150px;
+}
+
+.filter_options {
+    margin-top: 0.75rem;
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+}

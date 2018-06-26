@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+/* Components that aren't from SDC */
+
+@import "components/registers-grid.css";
+@import "components/typography.css";
+@import "components/header.css";
+@import "components/sub-header.css";
+@import "components/badges.css";
+@import "components/footer.css";
+@import "components/navigation.css";
+@import "components/login.css";
+@import "components/pagination.css";
+@import "components/multiple-select.css";
+@import "components/corrections.css";
+@import "components/search-results.css";
+@import "components/file-upload.css";
+@import "components/buttons.css";
+@import "components/dashboard.css";
+@import "components/tabs.css";
+@import "components/load-more.css";
+@import "components/bi/bi-search.css";
+@import "components/bi/bi-search-results.css";
+@import "components/sbr/sbr-breadcrumb.css";
+@import "components/sbr/sbr-enterprise-page.css";
+@import "components/sbr/sbr-tabs.css";
+@import "components/sbr/sbr-search.css";
+@import "components/sbr/sbr-search-results.css";
+@import "components/sbr/sbr-tables.css";
+@import "components/ai/ai-search-results.css";
+
+.panel--simple {
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.input--select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10.799px 36px 10.799px 9px;
+    padding: .6rem 2rem .6rem .5rem;
+    background: #fff url(../img/icons--chevron-down.svg) no-repeat center right 6px;
+    background-size: 1.5rem;
+    line-height: 22.5px;
+    line-height: 1.25rem;
+}
+
+.main-content {
+  padding: 32px 0;
+  padding: 2rem 0;
+}
+
+.key-line {
+  border-bottom: 1px solid #CFCFCF;
+  margin: 1rem 0 2rem 0;
+  padding-left: 0.8889rem;
+}
+
+.guidance__link{
+    text-decoration: none;
+}
+
+.guidance__link:hover {
+    text-decoration: none;
+}
+
+.guidance__link:before {
+    background: url(../img/icons--guidance.svg) no-repeat 50%;
+}
+
+.guidance__link:focus:before {
+    background: url(../img/icons--guidance-white.svg) no-repeat 50%;
+}
+
+.guidance {
+  margin-top: 0;
+}
+
+.guidance__content {
+  margin-top: 0.333rem;
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.guidance__main {
+  margin-left: 0;
+}
+
+.search__guidance {
+    margin-top: 0.5rem;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.search-input {
+  width: 26rem;
+}
+
+.search-input-fullwidth {
+  width: 100%;
+  height: 2.5rem;
+}
+
+.search-results-link {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+caption {
+  padding-bottom: 0.5rem;
+}
+
+/* Search term highlight colour */
+
+.highlight {
+  background-color: #F0F762;
+}
+
+/* Classification */
+
+.classification {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0.2rem;
+}
+
+/* Number of results returned heading */
+
+.number-of-results {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-weight: normal;
+}
+
+/* Bigger checkbox */
+
+.input--checkbox--large {
+  width: 24px;
+  height: 24px;
+}
+
+/* List items */
+
+li {
+  margin-bottom: 0;
+}
+
+/* Skip to active content */
+
+.skip__link {
+    display: block;
+    height: 1px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: -30px;
+    -webkit-transition: top .1s;
+    transition: top .1s;
+    text-align: center;
+    color: #fff;
+    background: #033e58;
+    font-weight: 600;
+    font-size: 19.8px;
+    font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 767px) {
+
+/* Input field full width on mobile */
+
+.search-input {
+    width: 100%;
+}
+
+}

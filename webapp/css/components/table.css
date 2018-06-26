@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+/* BI search results table list */
+
+table {
+    min-width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+  border: none;
+  text-align: left;
+  padding: 2px 0;
+  /* width: 240px; */
+  line-height: 1.4;
+}
+
+th.sbr-table {
+  border: none;
+  text-align: left;
+  padding: 2px 0;
+  width: 180px;
+  line-height: 1.4;
+}
+
+td {
+  border-bottom: none;
+  padding: 2px 0;
+  line-height: 1.4;
+}
+
+.table-grey-text {
+  color: #777777;
+  font-weight: 400;
+}
+
+.table-grey-text-reveal {
+  width: 56px;
+  color: #999999;
+  font-weight: 400;
+}
+
+.legal {
+  border-bottom: 1px solid #cfcfcf;
+  padding: 0.75rem 0;
+}
+
+/* BI Table view */
+
+.business-name {
+  min-width: 190px;
+  padding-bottom: 10px;
+}
+
+.business-name-l {
+  min-width: 300px;
+  padding-bottom: 10px;
+}
+
+.turnover {
+  min-width: 105px;
+}
+
+.postcode {
+  min-width: 90px;
+}
+
+.ubrn {
+  width: 123px;
+}
+
+.no-data {
+  color: #C1C1C1;
+}
+
+.download-results {
+  margin: 1.5rem 0;
+}
+
+.table-content {
+  padding: 1rem 0 0 0;
+}
+
+
+/* sortable table styles from ljwatson https://ljwatson.github.io/sortable-tables/ */
+
+.sortable span[role="button"] {
+    display: inline-block;
+}
+
+.sortable span[role="button"] {
+    color: #222222;
+}
+
+.sortable span[role="button"]:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sortable span[role="button"]:focus {
+  outline: none;
+}
+
+.sortable th {
+  white-space: nowrap;
+}
+
+.sortable th i {
+  padding-left: 2px;
+}
+
+.arrow:after {
+    background-image: url('../../img/arrow-sort.svg');
+    display: inline-block;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    content:"";
+    margin-bottom: -2px;
+}
+
+.arrow-down:after {
+    background-image: url('../../img/arrow-down.svg');
+    display: inline-block;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    content:"";
+    margin-bottom: -2px;
+}
+
+.arrow-up:after {
+    background-image: url('../../img/arrow-up.svg');
+    display: inline-block;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    content:"";
+    margin-bottom: -2px;
+}
+
+/* Radio buttons list/table toggle */
+
+input:checked~.label {
+    background: #fff;
+}
+
+.bi-radio-label {
+    padding: 13px 0 0 28px;
+    width: auto;
+}
+
+.field__item {
+    min-width: 4.5rem;
+    margin: -0.5rem 0 0 1.5rem;
+}
+
+.input--radio {
+    left: 0;
+}
+
+.content-align-right {
+    text-align: right;
+}
+
+.remove-margin {
+    margin: 0;
+}
+
+.list-content {
+    padding: 2rem 0 1rem 0;
+}
+
+.table-results {
+    margin-bottom: 2rem;
+}
+
+/* Reference number search guidance */
+
+th.search-guidance-row {
+    width: 2rem;
+}

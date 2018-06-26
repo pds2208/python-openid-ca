@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.service_tile, .service_tile_ai, .service_tile_bi, .service_tile_sbr {
+  width: 100%;
+  min-height: 400px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.service_tile_link {
+    text-decoration: none;
+    line-height: 1.0;
+}
+
+#tile:hover a {
+    color: #033E58;
+    text-decoration: underline;
+}
+
+.service_tile_link:focus a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.tile_text_area, .tile_text_area_ai, .tile_text_area_bi, .tile_text_area_sbr {
+  border: solid 1px #B2BFC9;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-top: none;
+  min-height: 200px;
+  padding: 1rem;
+}
+
+.tile-text-top {
+  margin-top: 0.75rem;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+.service_tile {
+    min-height: 150px;
+    margin-bottom: 1rem;
+  }
+
+.tile_text_area {
+    min-height: 100px;
+  }
+
+}

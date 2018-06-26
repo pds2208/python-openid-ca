@@ -2,47 +2,50 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
+    <section>
 
-    <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="main-content">
 
-        {% if error %}
+            <div class="wrapper narrow">
+                {% if error %}
 
-            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert"
-                 data-module="error-summary">
-                <h2 class="govuk-error-summary__title" id="error-summary-title">
-                    Login Problem
-                </h2>
-                <div class="govuk-error-summary__body">
-                    <p>{{ error }}</p>
-                    <p>Please try again</p>
-                </div>
+                    <div class="collator-item">
+                        <!-- Start: @panel--error -->
+                        <div class="panel panel--error">
+                            <div class="panel__header">
+                                <div class="venus">Login Problem</div>
+                            </div>
+                            <div class="panel__body">
+                                <p class="mars">{{ error }}</p>
+                                <p class="mars">Please try again</p>
+                            </div>
+                        </div>
+                        <!-- End: @panel--error -->
+                    </div>
+
+                {% endif %}
+
+                {% if current_user.is_authenticated %}
+
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            {% set message = 'You are already logged in ' + ca_user.nickname %}
+                            {{ heading3(message) }}
+                        </legend>
+                        {{ mediumSpacing() }}
+                        {{ onsPrimaryButton(caption="Continue to Shopping List", href="shopping") }}
+                    </fieldset>
+
+                {% else %}
+                    {{ mediumSpacing() }}
+                    {{ heading3('Welcome. Click on the Button Below to View your Shopping List') }}
+                    {{ mediumSpacing() }}
+                    {{ onsPrimaryButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
+
+                {% endif %}
             </div>
 
-        {% endif %}
-
-        {% if current_user.is_authenticated %}
-
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    <h3 class="govuk-fieldset__heading-m govuk-!-padding-bottom-9">
-                        You are already logged in {{ca_user.nickname}}
-                    </h3>
-                </legend>
-                {{ startButton(caption="Continue to Shopping List", href="shopping") }}
-            </fieldset>
-
-        {% else %}
-
-            <h3 class="govuk-heading-m govuk-!-padding-bottom-9">
-                Welcome. Click on the Button Below to View your Shopping List
-            </h3>
-
-            {{ startButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
-
-        {% endif %}
-
-    </main>
-</div>
+        </div>
+    </section>
 
 {% endblock %}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.ent-reference {
+  margin-left: 0;
+  display: inline-block;
+}
+
+.unit-info {
+  margin-bottom: 1rem;
+}
+
+.chart {
+  margin-top: 3.75rem;
+}

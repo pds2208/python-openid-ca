@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* SBR Primary search page */
+
+.table-row-guidance {
+    width: 9rem;
+}
+
+.reference-number-guidance {
+    margin: 0.5rem 0;
+}
+
+.reference-number-guidance td  {
+    display: block;
+}
+
+.sbr-postcode-input {
+    width: 12.57rem;
+    height: 45px;
+}
+
+/* SBR search header */
+
+.search_bar {
+    background-color: #E4E8EB;
+    padding: 1rem 0 0 0;
+}
+
+.three-col-button {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5456rem 0.8889rem 0.5456rem 0.8889rem;
+    margin-top: 1.95rem;
+}

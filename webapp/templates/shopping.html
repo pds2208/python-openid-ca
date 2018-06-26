@@ -2,58 +2,38 @@
 
 {% block content %}
 
-    <div class="govuk-width-container">
+    <div >
+        <div class="page__container container">
 
-        <a href="/" class="govuk-back-link">Back</a>
+            {{ smallSpacing() }} {{ onsLinkBack(caption="Back", href="/") }}
 
-        <main class="govuk-main-wrapper govuk-main-wrapper govuk-main-wrapper--l">
-            <h3 class="govuk-heading-m govuk-!-padding-bottom-2">
-                {% if ca_user.nickname %}
-                    Welcome {{ ca_user.nickname }}, your shopping list awaits you
-                {% else %}
-                    Welcome {{ ca_user.username }}, your shopping list awaits you
-                {% endif %}
-            </h3>
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+            {% if ca_user.nickname %}
+                {% set user = 'Welcome ' + ca_user.nickname + ', your Shopping list awaits you.' %}
+            {% else %}
+                {% set user = 'Welcome ' + ca_user.username + ', your Shopping list awaits you.' %}
+            {% endif %}
 
-                    <table class="govuk-table">
-                        <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-table__header" scope="col">Item Description</th>
-                            <th class="govuk-table__header govuk-table__header--numeric"
-                                scope="col">Budgeted Cost
-                            </th>
+            {{ smallSpacing() }} {{ heading3(user)}} {{ smallSpacing() }}
+
+            <div class="collator-item">
+                <table class="table">
+                    <thead class="table--head">
+                    <th scope="col" class="table--header--cell">Item Description</th>
+                    <th scope="col" class="table--header--cell">Budgeted Cost</th>
+                    </thead>
+                    <tbody>
+                    {% for item in products %}
+                        <tr class="table--row">
+                            <td class="table--cell">{{ item.item }}</td>
+                            <td class="table--cell">&pound;{{ item.price }}</td>
                         </tr>
-                        </thead>
-                        <tbody class="govuk-table__body">
-
-                        {% for item in products %}
-
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    {{ item.item }}
-                                </td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric">
-                                    &pound; {{ item.price }}
-                                </td>
-                            </tr>
-
-                        {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
-
-        </main>
-        <div>
-
-        {{ button(caption="Logout", href="logout") }}
-
+            {{ smallSpacing() }} {{ onsPrimaryButton(caption="Logout", href="logout") }}
         </div>
 
     </div>
-
 
 {% endblock %}
