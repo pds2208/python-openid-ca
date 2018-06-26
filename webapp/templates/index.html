@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 
 <div class="govuk-width-container">
@@ -30,13 +29,7 @@
                         You are already logged in {{ca_user.nickname}}
                     </h3>
                 </legend>
-                {{
-                    govukButton(
-                        caption="Continue to Shopping List",
-                        type="start",
-                        href="shopping"
-                    )
-                }}
+                {{ startButton(caption="Continue to Shopping List", href="shopping") }}
             </fieldset>
 
         {% else %}
@@ -45,11 +38,7 @@
                 Welcome. Click on the Button Below to View your Shopping List
             </h3>
 
-            <a href="{{url_for('oauth_authorise', provider='CA', nextPage='shopping')}}">
-                <button type="submit" class="govuk-button govuk-button--start">
-                    Shopping List
-                </button>
-            </a>
+            {{ startButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
 
         {% endif %}
 

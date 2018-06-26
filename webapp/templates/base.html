@@ -30,9 +30,9 @@
             document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
         </script>
 
-        {% from "macros/govukButton.html"
+        {% from "macros/buttons.html"
 
-            import govukButton with context
+            import button, startButton, disabledButton with context
 
         %}
 

@@ -1,0 +1,56 @@
+
+{# Simple macros for GOV.UK Button components #}
+
+{% macro startButton(caption="", uri=None, href=None) %}
+
+    {# Use like:
+            {{ startButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
+        or
+            {{ startButton(caption="Shopping List", href='/shopping') }}
+    #}
+
+    {% if uri %}
+
+        <a href="{{ uri }}">
+            <button type="submit" class="govuk-button govuk-button--start">
+                {{ caption }}
+            </button>
+        </a>
+
+    {% elif href %}
+
+        <a href="{{ href }}" role="button" class="govuk-button govuk-button--start">
+            {{ caption }}
+        </a>
+
+    {% endif %}
+
+{% endmacro %}
+
+{% macro button(caption="", href=None) %}
+
+    {%  if href == None %}
+
+        <button type="submit" class="govuk-button">
+            {{ caption }}
+        </button>
+
+    {% else %}
+
+    <a href="{{ href }}">
+        <button type="submit" class="govuk-button">
+            {{ caption }}
+        </button>
+    </a>
+
+    {% endif %}
+
+{% endmacro %}
+
+{% macro disabledButton(caption="") %}
+
+    <button type="submit" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled">
+        {{ caption }}
+    </button>
+
+{% endmacro %}
