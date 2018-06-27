@@ -25,7 +25,7 @@
 
                 {% endif %}
 
-                {% if current_user.is_authenticated %}
+                {% if current_user.is_authenticated and ca_user.nickname %}
 
                     <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -43,9 +43,11 @@
                     {{ primaryButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
 
                 {% endif %}
+            
             </div>
 
         </div>
+
     </section>
 
 {% endblock %}
