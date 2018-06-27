@@ -29,14 +29,15 @@
 
 <body>
 
-    {% from "macros/links.html" import linkBack with context  %}
-    {% from "macros/buttons.html" import primaryButton with context  %}
-    {% from "macros/header.html" import header with context %}
-    {% from "macros/headings.html" import heading3 with context %}
-    {% from "macros/spacing.html" import smallSpacing, mediumSpacing, largeSpacing, extraLargeSpacing with context %}
+    {% import 'macros/links.html'   as links %}
+    {% import 'macros/buttons.html' as buttons %}
+    {% import 'macros/heading.html' as heading %}
+    {% import 'macros/spacing.html' as spacing %}
+
+    {% from "macros/header.html" import header %}
     {% from "macros/footer.html" import footer %}
 
-    {{ header(serviceName="OpenID Demonstration",
+    {{ header(serviceName="OpenID Connect",
                 serviceDescription='OpenID Connect Demonstration Application') }}
 
     {% block content %}{% endblock %}

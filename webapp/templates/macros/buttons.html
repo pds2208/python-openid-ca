@@ -5,48 +5,48 @@
             {{ primaryButton(caption="Whatever", href='/shopping') }}
 #}
 
-{% macro primaryButton(caption="", uri=None, href=None) %}
+{% macro primary(caption="", uri=None, href=None) %}
 
-    {% call render_button('btn btn--primary', uri, href) %}
+    {% call _render_button('btn btn--primary', uri, href) %}
         {{ caption }}
     {% endcall %}
 
 {% endmacro %}
 
-{% macro primaryButtonLarge(caption="", uri=None, href=None) %}
+{% macro primaryLarge(caption="", uri=None, href=None) %}
 
-    {% call render_button('btn btn--primary btn--lg', uri, href) %}
+    {% call _render_button('btn btn--primary btn--lg', uri, href) %}
         {{ caption }}
     {% endcall %}
 
 {% endmacro %}
 
-{% macro secondaryButton(caption="", uri=None, href=None) %}
+{% macro secondary(caption="", uri=None, href=None) %}
 
-    {% call render_button('btn btn--secondary btn--border', uri, href) %}
+    {% call _render_button('btn btn--secondary btn--border', uri, href) %}
         {{ caption }}
     {% endcall %}
 
 {% endmacro %}
 
-{% macro disabledButton(caption="", uri=None, href=None) %}
+{% macro disabled(caption="", uri=None, href=None) %}
 
-    {% call render_button('btn btn--neutral', uri, href) %}
+    {% call _render_button('btn btn--neutral', uri, href) %}
         {{ caption }}
     {% endcall %}
 
 {% endmacro %}
 
-{% macro buttonLink(caption="", uri=None, href=None) %}
+{% macro link(caption="", uri=None, href=None) %}
 
-    {% call render_button('btn btn--link', uri, href) %}
+    {% call _render_button('btn btn--link', uri, href) %}
         {{ caption }}
     {% endcall %}
 
 {% endmacro %}
 
 
-{% macro render_button (class, uri, href) %}
+{% macro _render_button (class, uri, href) %}
 
     {% if uri %}
 
