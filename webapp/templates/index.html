@@ -33,14 +33,14 @@
                             {{ heading3(message) }}
                         </legend>
                         {{ mediumSpacing() }}
-                        {{ onsPrimaryButton(caption="Continue to Shopping List", href="shopping") }}
+                        {{ primaryButton(caption="Continue to Shopping List", href="shopping") }}
                     </fieldset>
 
                 {% else %}
                     {{ mediumSpacing() }}
                     {{ heading3('Welcome. Click on the Button Below to View your Shopping List') }}
                     {{ mediumSpacing() }}
-                    {{ onsPrimaryButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
+                    {{ primaryButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
 
                 {% endif %}
             </div>

@@ -1,105 +1,67 @@
-{# Simple macros for GOV.UK Button components #}
 
-
-{% macro onsLinkBack(caption="", uri=None, href=None) %}
-
-    {% if uri %}
-
-        <a href="{{ uri }}">
-            <img src="/assets/img/icon-arrow-left.png" alt="back"/>
-            <button class="btn btn--link">
-                {{ caption }}
-            </button>
-
-        </a>
-
-    {% elif href %}
-
-        <img src="/assets/img/icon-arrow-left.png" alt="back"/>
-        <a href="{{ href }}" class="btn btn--link">
-            {{ caption }}
-        </a>
-
-    {% endif %}
-
-{% endmacro %}
-
-{% macro onsPrimaryButton(caption="", uri=None, href=None) %}
-
-    {# Use like:
-            {{ startButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
+{# Use like:
+            {{ primaryButton(caption="Whatever", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
         or
-            {{ startButton(caption="Shopping List", href='/shopping') }}
-    #}
+            {{ primaryButton(caption="Whatever", href='/shopping') }}
+#}
 
-    {% if uri %}
+{% macro primaryButton(caption="", uri=None, href=None) %}
 
-        <a href="{{ uri }}">
-            <button type="submit" class="btn btn--primary">
-                {{ caption }}
-            </button>
-        </a>
-
-    {% elif href %}
-
-        <a href="{{ href }}" role="button" class="btn btn--primary">
-            {{ caption }}
-        </a>
-
-    {% endif %}
-
-{% endmacro %}
-
-{% macro startButton(caption="", uri=None, href=None) %}
-
-    {# Use like:
-            {{ startButton(caption="Shopping List", uri=url_for('oauth_authorise', provider='CA', nextPage='shopping')) }}
-        or
-            {{ startButton(caption="Shopping List", href='/shopping') }}
-    #}
-
-    {% if uri %}
-
-        <a href="{{ uri }}">
-            <button type="submit" class="govuk-button govuk-button--start">
-                {{ caption }}
-            </button>
-        </a>
-
-    {% elif href %}
-
-        <a href="{{ href }}" role="button" class="govuk-button govuk-button--start">
-            {{ caption }}
-        </a>
-
-    {% endif %}
-
-{% endmacro %}
-
-{% macro button(caption="", href=None) %}
-
-    {% if href == None %}
-
-        <button type="submit" class="govuk-button">
-            {{ caption }}
-        </button>
-
-    {% else %}
-
-        <a href="{{ href }}">
-            <button type="submit" class="govuk-button">
-                {{ caption }}
-            </button>
-        </a>
-
-    {% endif %}
-
-{% endmacro %}
-
-{% macro disabledButton(caption="") %}
-
-    <button type="submit" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled">
+    {% call render_button('btn btn--primary', uri, href) %}
         {{ caption }}
-    </button>
+    {% endcall %}
+
+{% endmacro %}
+
+{% macro primaryButtonLarge(caption="", uri=None, href=None) %}
+
+    {% call render_button('btn btn--primary btn--lg', uri, href) %}
+        {{ caption }}
+    {% endcall %}
+
+{% endmacro %}
+
+{% macro secondaryButton(caption="", uri=None, href=None) %}
+
+    {% call render_button('btn btn--secondary btn--border', uri, href) %}
+        {{ caption }}
+    {% endcall %}
+
+{% endmacro %}
+
+{% macro disabledButton(caption="", uri=None, href=None) %}
+
+    {% call render_button('btn btn--neutral', uri, href) %}
+        {{ caption }}
+    {% endcall %}
+
+{% endmacro %}
+
+{% macro buttonLink(caption="", uri=None, href=None) %}
+
+    {% call render_button('btn btn--link', uri, href) %}
+        {{ caption }}
+    {% endcall %}
+
+{% endmacro %}
+
+
+{% macro render_button (class, uri, href) %}
+
+    {% if uri %}
+
+        <a href="{{ uri }}">
+            <button type="submit" class={{ class }}>
+                {{ caller() }}
+            </button>
+        </a>
+
+    {% elif href %}
+
+        <a href="{{ href }}" role="button" class={{ class }}>
+            {{ caller() }}
+        </a>
+
+    {% endif %}
 
 {% endmacro %}

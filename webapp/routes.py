@@ -131,9 +131,9 @@ def shopping():
     return render_template('shopping.html', title='Shopping List', user=user, products=products)
 
 
-@app.route('/css/<path:path>')
+@app.route('/assets.css/<path:path>')
 def send_css(path):
-    return send_from_directory('css', path)
+    return send_from_directory('assets.css', path)
 
 
 @app.route('/javascript/<path:path>')

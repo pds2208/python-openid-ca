@@ -1,0 +1,22 @@
+{% macro linkBack(caption="", uri=None, href=None) %}
+
+    {% if uri %}
+
+        <a href="{{ uri }}">
+            <img src="/assets/img/icon-arrow-left.svg" alt="back"/>
+            <button class="btn btn--link">
+                {{ caption }}
+            </button>
+
+        </a>
+
+    {% elif href %}
+
+        <img src="/assets/img/icon-arrow-left.svg" alt="back"/>
+        <a href="{{ href }}" class="btn btn--link">
+            {{ caption }}
+        </a>
+
+    {% endif %}
+
+{% endmacro %}

@@ -1,63 +1,51 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>OpenID Connect Demo</title>
+<head>
+    <title>OpenID Connect Demo</title>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/assets/img/favicons/manifest.json">
-        <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="https://cdn.ons.gov.uk/sdc/8f80aaa/css/styles.css">
-        <link rel="stylesheet" href="/css/registers-main.css" media="all">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/assets/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.ons.gov.uk/sdc/8f80aaa/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/registers-main.css" media="all">
 
-    </head>
+    <!--[if gt IE 8]><!-->
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js')</script>
+    <!--<![endif]-->
 
-    <body>
+    <!-- to stop the annoying shift when the scrollbar is shown -->
+    <style>
+        html{
+            height:101%;
+        }
+    </style>
+</head>
 
-        {% from "macros/buttons.html"
+<body>
 
-            import onsPrimaryButton, button, startButton, disabledButton with context
+    {% from "macros/links.html" import linkBack with context  %}
+    {% from "macros/buttons.html" import primaryButton with context  %}
+    {% from "macros/header.html" import header with context %}
+    {% from "macros/headings.html" import heading3 with context %}
+    {% from "macros/spacing.html" import smallSpacing, mediumSpacing, largeSpacing, extraLargeSpacing with context %}
+    {% from "macros/footer.html" import footer %}
 
-        %}
+    {{ header(serviceName="OpenID Demonstration",
+                serviceDescription='OpenID Connect Demonstration Application') }}
 
-        {% from "macros/header.html"
+    {% block content %}{% endblock %}
 
-            import header with context
-        %}
+    {{ footer() }}
 
-        {% from "macros/headings.html"
-            import heading3 with context
-        %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='https://cdn.ons.gov.uk/sdc/0bceacd/scripts/bundle.min.js'></script>
 
-        {% from "macros/spacing.html"
-            import smallSpacing, mediumSpacing, largeSpacing, extraLargeSpacing with context
-        %}
-
-        {% from "macros/buttons.html"
-            import onsLinkBack with context
-        %}
-
-        {{  header(serviceName="OpenID Demonstration",
-            serviceDescription='OpenID Connect Demonstration Application')
-        }}
-
-        {% block content %}{% endblock %}
-
-        {% from "macros/footer.html"
-
-            import footer
-        %}
-
-       {{ footer() }}
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src='https://cdn.ons.gov.uk/sdc/0bceacd/scripts/bundle.min.js'></script>
-
-    </body>
+</body>
 
 </html>

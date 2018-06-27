@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* Components that aren't from SDC */
-
 @import "components/registers-grid.css";
 @import "components/typography.css";
 @import "components/header.css";
@@ -13,7 +12,6 @@
 @import "components/pagination.css";
 @import "components/multiple-select.css";
 @import "components/corrections.css";
-@import "components/search-results.css";
 @import "components/file-upload.css";
 @import "components/buttons.css";
 @import "components/dashboard.css";
@@ -46,17 +44,17 @@
 }
 
 .main-content {
-  padding: 32px 0;
-  padding: 2rem 0;
+    padding: 32px 0;
+    padding: 2rem 0;
 }
 
 .key-line {
-  border-bottom: 1px solid #CFCFCF;
-  margin: 1rem 0 2rem 0;
-  padding-left: 0.8889rem;
+    border-bottom: 1px solid #CFCFCF;
+    margin: 1rem 0 2rem 0;
+    padding-left: 0.8889rem;
 }
 
-.guidance__link{
+.guidance__link {
     text-decoration: none;
 }
 
@@ -73,18 +71,18 @@
 }
 
 .guidance {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .guidance__content {
-  margin-top: 0.333rem;
-  border-left: none;
-  margin-left: 0;
-  padding-left: 0;
+    margin-top: 0.333rem;
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .guidance__main {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .search__guidance {
@@ -92,60 +90,60 @@
 }
 
 a {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .search-input {
-  width: 26rem;
+    width: 26rem;
 }
 
 .search-input-fullwidth {
-  width: 100%;
-  height: 2.5rem;
+    width: 100%;
+    height: 2.5rem;
 }
 
 .search-results-link {
-  text-decoration: none;
-  text-transform: uppercase;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 caption {
-  padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 /* Search term highlight colour */
 
 .highlight {
-  background-color: #F0F762;
+    background-color: #F0F762;
 }
 
 /* Classification */
 
 .classification {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  padding-top: 0.2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0.2rem;
 }
 
 /* Number of results returned heading */
 
 .number-of-results {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: normal;
 }
 
 /* Bigger checkbox */
 
 .input--checkbox--large {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
 
 /* List items */
 
 li {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Skip to active content */
@@ -169,10 +167,9 @@ li {
 
 @media only screen and (max-width: 767px) {
 
-/* Input field full width on mobile */
-
-.search-input {
-    width: 100%;
-}
+    /* Input field full width on mobile */
+    .search-input {
+        width: 100%;
+    }
 
 }
