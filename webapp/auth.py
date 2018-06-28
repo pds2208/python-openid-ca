@@ -65,7 +65,7 @@ class CASignIn(OAuthSignIn):
 
         # Check if cancelled or invalid UID / password
         error = request.args.get('error')
-        if error is not None:
+        if error:
             return None, None, None, None, None, None, error, request.args.get("error_description")
 
         if 'code' not in request.args:
@@ -80,5 +80,5 @@ class CASignIn(OAuthSignIn):
         )
 
         me = oauth_session.get('').json()
-        return self.next_page, me['name'], me['email'], me['family_name'], \
-               me['nickname'], me['preferred_username'], None, None
+        return self.next_page, me['name'], me['email'], \
+               me['family_name'], me['nickname'], me['preferred_username'], None, None

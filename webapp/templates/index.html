@@ -9,19 +9,7 @@
             <div class="wrapper narrow">
                 {% if error %}
 
-                    <div class="collator-item">
-                        <!-- Start: @panel--error -->
-                        <div class="panel panel--error">
-                            <div class="panel__header">
-                                <div class="venus">Login Problem</div>
-                            </div>
-                            <div class="panel__body">
-                                <p class="mars">{{ error }}</p>
-                                <p class="mars">Please try again</p>
-                            </div>
-                        </div>
-                        <!-- End: @panel--error -->
-                    </div>
+                    {{ message.error('Login Problem', error, 'Please try again.') }}
 
                 {% endif %}
 

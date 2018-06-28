@@ -8,7 +8,7 @@
 {% macro primary(caption="", uri=None, href=None) %}
 
     {% call _render_button('btn btn--primary', uri, href) %}
-        {{ caption }}
+        {{ caption|e }}
     {% endcall %}
 
 {% endmacro %}
@@ -16,7 +16,7 @@
 {% macro primaryLarge(caption="", uri=None, href=None) %}
 
     {% call _render_button('btn btn--primary btn--lg', uri, href) %}
-        {{ caption }}
+        {{ caption|e }}
     {% endcall %}
 
 {% endmacro %}
@@ -24,7 +24,7 @@
 {% macro secondary(caption="", uri=None, href=None) %}
 
     {% call _render_button('btn btn--secondary btn--border', uri, href) %}
-        {{ caption }}
+        {{ caption|e }}
     {% endcall %}
 
 {% endmacro %}
@@ -32,7 +32,7 @@
 {% macro disabled(caption="", uri=None, href=None) %}
 
     {% call _render_button('btn btn--neutral', uri, href) %}
-        {{ caption }}
+        {{ caption|e }}
     {% endcall %}
 
 {% endmacro %}
@@ -40,7 +40,7 @@
 {% macro link(caption="", uri=None, href=None) %}
 
     {% call _render_button('btn btn--link', uri, href) %}
-        {{ caption }}
+        {{ caption|e }}
     {% endcall %}
 
 {% endmacro %}
