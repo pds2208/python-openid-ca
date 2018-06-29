@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request, send_from_directory, url_for
+from flask import redirect, render_template, request, url_for
 from webapp import app
 
 from webapp.models.user import User
