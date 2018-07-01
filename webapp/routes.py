@@ -128,4 +128,4 @@ def shopping():
         }
 
     ]
-    return render_template('shopping.html', title='Shopping List', user=user, products=products)
+    return render_template('shopping.html', title='Shopping List', products=products)
